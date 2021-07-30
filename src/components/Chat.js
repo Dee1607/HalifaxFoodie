@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AWS from 'aws-sdk';
 import axios from 'axios';
 
-class LexChatUser extends React.Component {
+class LexChat extends React.Component {
     constructor(props) {
         super(props);
         this.humanstart = false;
@@ -244,7 +244,7 @@ class LexChatUser extends React.Component {
     }
 }
 
-LexChatUser.propTypes = {
+LexChat.propTypes = {
     botName: PropTypes.string,
     IdentityPoolId: PropTypes.string.isRequired,
     placeholder: PropTypes.string.isRequired,
@@ -253,4 +253,4 @@ LexChatUser.propTypes = {
     headerText: PropTypes.string
 }
 
-export default LexChatUser;
+export default LexChat;
