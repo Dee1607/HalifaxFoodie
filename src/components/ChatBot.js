@@ -5,7 +5,7 @@ import LexChatUser from './Chat';
 const ChatBot = (props) => {
 return (
         <div>
-            <LexChatUser
+            <LexChat
                 botName="HalifaxFoodieSApp"
                 IdentityPoolId="us-east-1:881595106227f"
                 placeholder="Type here..."
