@@ -110,12 +110,14 @@ const CusFeedbacksPage = () => {
                 <div className="mt-4">
                     <form>
                     <p style={{ "text-align":"left" }}>Select the Restaurant:</p>
-                    <select name="restaurantName" onChange={(e) => handleChange(e)}>
+                    <p style={{ "text-align":"left" }}>
+                    <select  name="restaurantName" onChange={(e) => handleChange(e)}>
                         <option>Select the restaurant</option>
                         {restaurantList.length > 0 &&  restaurantList.map(function (restaurant, index){
                             return <option value={restaurant.name}>{restaurant.name}</option>
                         })}
                     </select>
+                    </p>
 
                         <p style={{ "text-align":"left" }}>Enter your feedback:</p>
                         <div className="col-md-4" style={{ "text-align":"left" }}>
