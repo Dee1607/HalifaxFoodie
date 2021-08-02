@@ -23,6 +23,10 @@ const ResHeader = () => {
     history.push('/viewreports');
   };
 
+  const goToPredictHandler = () => {
+    history.push('/uploadrecipe');
+  }
+
   return (
     <header style={{ position: 'fixed', top: '0', right: '0', left: '0' }}>
       <Navbar
@@ -63,6 +67,17 @@ const ResHeader = () => {
               }}
             >
               REPORTS
+            </Nav.Link>
+
+            <Nav.Link
+              className='m-auto'
+              onClick={goToPredictHandler}
+              style={{
+                fontFamily: 'ui-monospace',
+                fontSize: '15px',
+              }}
+            >
+            PREDICT
             </Nav.Link>
             
             <Nav.Link

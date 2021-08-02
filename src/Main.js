@@ -60,7 +60,7 @@ const Main = () => {
                   component={CusOrderNowPage}
                 />
                 <Route path='/chatbot' component={ChatBot} exact />
-                <Route path='/uploadfile' component={UploadRecipe} exact />
+                
                 <Route path='/' component={CusHomeScreenPage} exact />
               </Container>
             </main>
@@ -75,6 +75,7 @@ const Main = () => {
               <Route path='/dashboard' component={ResDashboardPage} />
                 <Route path='/orders' component={ResOrdersPage} />
                 <Route path='/viewreports' component={ViewReportsPage} exact />
+                <Route path='/uploadrecipe' component={UploadRecipe} exact />
                 <Route path='/' component={ResHomeScreenPage} exact />
               </Container>
             </main>
