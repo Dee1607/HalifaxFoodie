@@ -8,6 +8,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "aws-amplify": "^4.2.0",
+    "aws-sdk": "^2.959.0",
     "bootstrap": "^5.0.2",
     "firebase": "^8.7.1",
     "moment": "^2.29.1",
