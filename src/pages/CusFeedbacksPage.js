@@ -5,7 +5,6 @@ import firebase from 'firebase'
 const CusFeedbacksPage = () => {
 
     const [restaurantList, setRestaurantList] = useState([])
-    
     const ref_restaurants = firebase.firestore().collection('restaurants')
     
     useEffect(() => {
@@ -48,12 +47,11 @@ const CusFeedbacksPage = () => {
 
     const onClick =  (event) => 
     {
-        console.log('myuyyy',feedbackData)
         event.preventDefault();
         axios.post("https://mgvlaiw66a.execute-api.us-east-1.amazonaws.com/default/generateWordCloudG17",JSON.stringify({data: feedbackData})).then((response) => {
 
             let wordCloudData = ""
-            response.data.Items.forEach((element, index) => {
+            response.data.Items.forEach((element) => {
                 wordCloudData = wordCloudData + element.feedbackData;
                 wordCloudData = wordCloudData + " ";
             });
