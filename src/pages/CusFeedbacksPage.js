@@ -28,8 +28,21 @@ const CusFeedbacksPage = () => {
         image: ""
     })
 
+    const generateRandonOrderId = () => {
+        var randomString = ''
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+        const length = characters.length
+    
+        for (var i = 0; i < 10; i++) {
+          randomString += characters.charAt(Math.floor(Math.random() * length))
+        }
+        
+        return randomString
+      }
+
     const [feedbackData, setFeedbackData] = useState({
-        feedbackData: "",
+        id: generateRandonOrderId(),
+        feedbackData: "", 
         restaurantName: "",
     })
 
@@ -37,7 +50,7 @@ const CusFeedbacksPage = () => {
     {
         console.log('myuyyy',feedbackData)
         event.preventDefault();
-        axios.post("https://uya4nc1v2k.execute-api.us-east-1.amazonaws.com/default/wordCloudFunctionGroup17",JSON.stringify({data: feedbackData})).then((response) => {
+        axios.post("https://mgvlaiw66a.execute-api.us-east-1.amazonaws.com/default/generateWordCloudG17",JSON.stringify({data: feedbackData})).then((response) => {
 
             let wordCloudData = ""
             response.data.Items.forEach((element, index) => {
@@ -69,8 +82,8 @@ const CusFeedbacksPage = () => {
             data: {
               text: text,
               scale: 0.5,
-              width: 800,
-              height: 800,
+              width: 400,
+              height: 400,
               colors: ['#375E97', '#FB6542', '#FFBB00', '#3F681C'],
               font: 'Tahoma',
               use_stopwords: true,
@@ -79,7 +92,7 @@ const CusFeedbacksPage = () => {
             }
         }).then((response) => {
             data.image = response.data;
-            console.log('image', data.image);
+            console.log('image', response.data);
         }).catch((error) => {
             console.log("Eroor")
         })
