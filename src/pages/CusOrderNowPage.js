@@ -73,7 +73,7 @@ const OrderNowPage = () => {
       data.status= 'Order Placed'
       data.time= Date.now()
 
-    const orderId = generateRandonOrderId()
+    const orderId = generatedID
     const user = {
       order: dish.name,
       order_id: orderId,
